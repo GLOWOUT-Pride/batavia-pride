@@ -8,14 +8,18 @@
     "react-scripts": "5.0.1",
     "gh-pages": "^6.3.0"
   },
+  {
+  // ... (other fields)
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --force"
+    "deploy": "gh-pages -d build", // Removed --force and --repo
+    "clear-gh-pages": "git push origin --delete gh-pages && git branch -D gh-pages" // NEW SCRIPT
   },
+}
   "repository": {
     "type": "git",
     "url": "https://github.com/GLOWOUT-Pride/batavia-pride.git"
