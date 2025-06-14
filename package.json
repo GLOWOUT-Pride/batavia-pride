@@ -3,8 +3,7 @@
     "gh-pages": "^6.3.0"}
 
 {
-  "name": "Batavia-pride",
-}
+  "name": { "Batavia-pride" }
 
   "scripts": {
     "predeploy": "npm run build",
