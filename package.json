@@ -1,15 +1,13 @@
 {
+  "name": "Batavia-pride",
+  "version": "1.0.0",
+  "private": true,
   "dependencies": {
-    "gh-pages": "^6.3.0"}
-
-{
-  "name": { "Batavia-pride" }
-
+    "gh-pages": "^6.3.0"
+  },
   "scripts": {
     "predeploy": "npm run build",
-}
-{
-  "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -18,8 +16,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  },
-  {"homepage": "https://GLOWOUT-Pride.github.io/batavia-pride"
-}
-  }
+  "homepage": "https://GLOWOUT-Pride.github.io/batavia-pride"
 }
