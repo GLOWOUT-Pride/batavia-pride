@@ -1,8 +1,30 @@
 {
   "dependencies": {
     "gh-pages": "^6.3.0"
-"homepage": "https://GLOWOUT-Pride.github.io/batavia-pride"
-"predeploy": "npm run build",
-"deploy": "gh-pages -d build"
+
+
+
+
+
+{
+  "name": "Batavia-pride",
+
+  "scripts": {
+    "predeploy": "npm run build",
+
+  "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glowout-pride/batavia-pride.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://glowout-pride.github.io/batavia-pride/"
+  },
+  "homepage": "https://GLOWOUT-Pride.github.io/batavia-pride"
+}
   }
 }
