@@ -1,7 +1,68 @@
 import React, { useState, useEffect } from 'react';
 
+// Landing Page Component
+const LandingPage = ({ onEnterApp }) => {
+  return (
+    <div
+      className="min-h-screen flex flex-col items-center justify-center p-4 font-inter text-white text-center"
+      style={{
+        backgroundImage: 'url(https://i.imgur.com/8mwKV54.jpeg)', // Updated background image
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        width: '100vw',
+        height: '100vh',
+      }}
+    >
+      <div className="bg-black bg-opacity-70 backdrop-blur-sm p-8 rounded-3xl shadow-2xl max-w-2xl mx-auto border-4 border-yellow-300 transform transition-transform duration-500 hover:scale-105">
+        <h1 className="text-5xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-400 via-green-400 via-blue-400 to-purple-400 mb-6 drop-shadow-lg animate-pulse">
+          Welcome to Batavia Pride!
+        </h1>
+        <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+          Celebrate love, diversity, and community. Explore our event schedule, vendor directory, and important links.
+        </p>
+        <button
+          onClick={onEnterApp}
+          className="px-12 py-5 bg-gradient-to-r from-pink-500 via-purple-700 to-blue-700 text-white text-2xl font-bold rounded-full shadow-lg hover:from-pink-600 hover:via-purple-800 hover:to-blue-800 transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-95 animate-bounce-slow"
+        >
+          Enter App
+        </button>
+      </div>
+       {/* Tailwind CSS CDN */}
+       <script src="https://cdn.tailwindcss.com"></script>
+       {/* Inter font from Google Fonts */}
+       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+       <style>
+        {`
+          body {
+            font-family: 'Inter', sans-serif;
+          }
+          @keyframes bounce-slow {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+          }
+          .animate-bounce-slow {
+            animation: bounce-slow 3s infinite ease-in-out;
+          }
+          .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          }
+        `}
+      </style>
+    </div>
+  );
+};
+
+
 // Main App component
 const App = () => {
+  // State to control showing the landing page or the main app
+  const [showLandingPage, setShowLandingPage] = useState(true);
+
   // State for the currently selected tab (Vendor Directory, Schedule, or Links)
   const [activeTab, setActiveTab] = useState('vendors'); // Default to vendor directory
   // State for the schedule search query (still applies to schedule and vendors)
@@ -29,13 +90,22 @@ const App = () => {
       time: '4:30 PM - 5:00 PM',
       event: (
         <>
-          Parade Line Up (300 east main, Batavia) /{' '}
+          Parade Line Up ({' '}
+          <a
+            href="https://maps.google.com/?q=300 East Main Street, Batavia, NY" // Google Maps link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:underline"
+          >
+            300 East Main, Batavia
+          </a>
+          ) /{' '}
           <a href="https://www.thergmc.org/" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">
             Rochester Gay Men's Chorus
           </a>
         </>
       ),
-      plainText: 'Parade Line Up (300 east main, Batavia) / Rochester Gay Men\'s Chorus'
+      plainText: 'Parade Line Up (300 East Main, Batavia) / Rochester Gay Men\'s Chorus' // Updated plainText
     },
     {
       time: '5:00 PM - 6:00 PM',
@@ -62,6 +132,18 @@ const App = () => {
       event: 'Drag Set #2:',
       plainText: 'Drag Set #2:'
     },
+    {
+      time: '10:00 PM - 12:00 AM',
+      event: (
+        <>
+          Pride After Party at{' '}
+          <a href="https://g.co/kgs/nXWvcmh" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline">
+            TF Browns
+          </a>
+        </>
+      ),
+      plainText: 'Pride After Party at TF Browns'
+    }, // New event added here
   ];
 
   // Filtered schedule based on search query
@@ -98,19 +180,19 @@ const App = () => {
     {
       category: 'Other Vendors / Attractions',
       items: [
-        { name: 'Aryya\'s Tavern Yakisobas', plainText: 'Aryya\'s Tavern Yakisobas' },
+        { name: 'Aryya\'s Tavern', plainText: 'Aryya\'s Tavern' },
+        { name: 'Yakisobas', plainText: 'Yakisobas' },
         { name: 'All Thumbs Plant Nursery', plainText: 'All Thumbs Plant Nursery', link: 'https://www.facebook.com/profile.php?id=61564945813142#' },
         { name: 'It\'s a Bee\'s Knees', plainText: 'It\'s a Bee\'s Knees' },
         { name: 'Culinary Creations', plainText: 'Culinary Creations' },
         { name: 'Pixel Perfect', plainText: 'Pixel Perfect' },
         { name: 'DivasWho Entertainment', plainText: 'DivasWho Entertainment', link: 'https://www.instagram.com/divaswho/' },
-        // CORRECTED LINK: Livin W Lyss link was malformed. Removed extra text.
         { name: 'Livin W Lyss', plainText: 'Livin W Lyss', link: 'https://www.instagram.com/livin.w.lyss/' },
         { name: 'Little Red House', plainText: 'Little Red House' },
         { name: 'Pretty Little Edges', plainText: 'Pretty Little Edges', link: 'https://www.instagram.com/pretty_little_edges/?hl=en' },
         { name: 'Sweet Crumbly Chaos', plainText: 'Sweet Crumbly Chaos', link: 'https://www.facebook.com/profile.php?id=61576671210808#' },
         { name: 'Burning Buffalo CO', plainText: 'Burning Buffalo CO' },
-        { name: 'Shed for Farmers Market', plainText: 'Shed for Farmers Market' }, // Separate entry as it was on the map, no link provided in doc.
+        // Removed 'Shed for Farmers Market'
       ],
     },
     {
@@ -118,17 +200,35 @@ const App = () => {
       items: [
         { name: 'Parade Line Up (300 East Main, Batavia)', plainText: 'Parade Line Up (300 East Main, Batavia)' },
         { name: 'Bathroom Station (2)', plainText: 'Bathroom Station (2)', link: 'https://creeksiderentals.com/' },
-        { name: 'Glowing Station, First Aid', plainText: 'Glowing Station, First Aid' },
+        { name: 'Cooling Station', plainText: 'Cooling Station' }, // Separated from First Aid
+        { name: 'First Aid', plainText: 'First Aid' }, // Separated from Cooling Station
         { name: 'Picnic Table (multiple locations)', plainText: 'Picnic Table (multiple locations)' },
       ],
     },
   ];
 
+  // Data for Performers
+  const performers = [
+    { name: 'Vivian Darling', link: 'https://www.instagram.com/viviidarling/' },
+    { name: 'Jayme Coxx', link: null },
+    { name: 'Victoria Dupree', link: 'https://www.instagram.com/dupreevictoria_/' },
+    { name: 'Chintz McMahon', link: 'https://www.instagram.com/chintzmcmahon/' },
+    { name: 'Karma Quinn', link: 'https://www.instagram.com/karma_quinn666/' },
+    { name: 'Morticia Monroe', link: 'https://www.instagram.com/morticia_c_monroe/' },
+    { name: 'Chloe Diamond', link: 'https://www.instagram.com/_chloe_diamond_/' },
+    { name: 'Aneal Pleasures', link: null },
+    { name: 'Destiny Spice', link: 'https://www.instagram.com/destinydoubled/' },
+  ];
+
+  if (showLandingPage) {
+    return <LandingPage onEnterApp={() => setShowLandingPage(false)} />;
+  }
+
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center p-4 font-inter text-gray-800"
       style={{
-        backgroundImage: 'url(https://i.imgur.com/8bTVLRf.jpeg)',
+        backgroundImage: 'url(https://i.imgur.com/8mwKV54.jpeg)', // Updated background image
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -257,20 +357,47 @@ const App = () => {
 
         {/* Links Section */}
         {activeTab === 'links' && (
-          <div className="bg-white bg-opacity-90 p-6 rounded-2xl shadow-inner max-h-[70vh] overflow-y-auto border-4 border-yellow-300 flex flex-col items-center justify-center min-h-[300px]">
+          <div className="bg-white bg-opacity-90 p-6 rounded-2xl shadow-inner max-h-[70vh] overflow-y-auto border-4 border-yellow-300 flex flex-col items-center">
             <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 mb-6 text-center">Important Links</h2>
+
+            {/* Performers Section */}
+            <div className="w-full mb-8">
+              <h3 className="text-xl font-bold text-purple-700 mb-3 border-b-2 border-pink-300 pb-1 text-center">Featured Performers</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {performers.map((performer, index) => (
+                  <div key={index} className="flex justify-center">
+                    {performer.link ? (
+                      <a
+                        href={performer.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 px-4 py-2 bg-gradient-to-r from-pink-400 to-purple-500 text-white text-base font-semibold rounded-full shadow-md hover:from-pink-500 hover:to-purple-600 transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 text-center"
+                      >
+                        {performer.name}
+                      </a>
+                    ) : (
+                      <span className="flex-1 px-4 py-2 bg-gray-200 text-gray-700 text-base font-semibold rounded-full shadow-md text-center cursor-not-allowed">
+                        {performer.name}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Glowout Button (Linktree) at the bottom */}
             <a
               href="https://linktr.ee/GenLivOrlWyoOUT"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-4 bg-gradient-to-r from-pink-500 via-purple-700 to-blue-700 text-white text-xl font-bold rounded-full shadow-lg hover:from-pink-600 hover:via-purple-800 hover:to-blue-800 transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 flex items-center"
+              className="px-10 py-4 bg-gradient-to-r from-pink-500 via-purple-700 to-blue-700 text-white text-xl font-bold rounded-full shadow-lg hover:from-pink-600 hover:via-purple-800 hover:to-blue-800 transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95 flex items-center mt-6"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.102 1.101M5.07 10.172a4 4 0 115.656 5.656L10.93 16.5M16.93 10.172a4 4 0 11-5.656 5.656L13.07 16.5" />
               </svg>
-              Visit Our Linktree
+              Glowout
             </a>
-            <p className="mt-4 text-gray-600 text-center">Click the button above for more information about Batavia Pride and our community partners!</p>
+            <p className="mt-4 text-gray-600 text-center">Click for more about Batavia Pride and our community partners!</p>
           </div>
         )}
       </div>
