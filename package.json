@@ -15,14 +15,14 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "clear-gh-pages": "git push origin --delete gh-pages && git branch -D gh-pages" 
+    "clear-gh-pages": "git push origin --delete gh-pages && git branch -D gh-pages"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/GLOWOUT-Pride/batavia-pride.git"
   },
- "keywords": [],
- "author": "",
- "license": "ISC",
- "homepage": "https://GLOWOUT-Pride.github.io/batavia-pride"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://GLOWOUT-Pride.github.io/batavia-pride"
 }
