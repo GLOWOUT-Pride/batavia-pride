@@ -8,7 +8,7 @@
   "scripts": {
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --repo https://github.com/GLOWOUT-Pride/batavia-pride.git"
+    "deploy": "gh-pages -d build --force --repo https://github.com/GLOWOUT-Pride/batavia-pride.git"
   },
   "repository": {
     "type": "git",
