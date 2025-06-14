@@ -2,16 +2,14 @@
   "dependencies": {
     "gh-pages": "^6.3.0"
 
-
-
-
-
 {
   "name": "Batavia-pride",
+}
 
   "scripts": {
     "predeploy": "npm run build",
-
+}
+{
   "deploy": "gh-pages -d build"
   },
   "repository": {
@@ -24,7 +22,7 @@
   "bugs": {
     "url": "https://glowout-pride.github.io/batavia-pride/"
   },
-  "homepage": "https://GLOWOUT-Pride.github.io/batavia-pride"
+  {"homepage": "https://GLOWOUT-Pride.github.io/batavia-pride"
 }
   }
 }
