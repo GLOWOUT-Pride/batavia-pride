@@ -21,8 +21,8 @@
     "type": "git",
     "url": "https://github.com/GLOWOUT-Pride/batavia-pride.git"
   },
- { "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://GLOWOUT-Pride.github.io/batavia-pride"
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ { "homepage": "https://GLOWOUT-Pride.github.io/batavia-pride"
 }
