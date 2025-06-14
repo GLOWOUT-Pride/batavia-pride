@@ -1,0 +1,23 @@
+/* src/index.css */
+
+/* Basic reset for consistent styling across browsers */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Add any global Tailwind CSS base styles or custom CSS here if needed */
+/* For example, if you want a dark background by default */
+/* body {
+  background-color: #1a202c;
+  color: #a0aec0;
+} */
