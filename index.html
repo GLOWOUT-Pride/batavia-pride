@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batavia Pride</title>
+    <!-- Favicon - you might want to replace this with your own -->
+    <link rel="icon" href="https://placehold.co/32x32/ffffff/000000?text=BP" type="image/x-icon">
+
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN - This is for quick prototyping. For a typical Create React App,
+         Tailwind is usually configured via PostCSS, so this CDN might be removed in production. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <!-- This is where your React app will be mounted. -->
+    <div id="root" class="w-full h-full flex items-center justify-center text-center text-gray-700">
+        <div class="p-8 bg-white rounded-lg shadow-lg">
+            <h1 class="text-2xl font-bold mb-4">Loading Batavia Pride App...</h1>
+            <p>Please wait while the application loads.</p>
+            <!-- A simple loading spinner -->
+            <div class="mt-4 flex justify-center">
+                <svg class="animate-spin h-8 w-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!--
+        Your React application's bundled JavaScript will be loaded here.
+        In a typical Create React App setup, this `index.html` is generated/modified
+        by the build process to include the correct script tags for your bundled JS.
+        You won't typically manually add `<script src="./src/index.js"></script>` here
+        for production builds, as bundlers like Webpack (used by Create React App)
+        handle this for you.
+    -->
+</body>
+</html>
